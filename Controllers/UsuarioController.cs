@@ -24,10 +24,10 @@ namespace Biblioteca.Controllers
             {
                 usuarioService.Inserir(u);
             }
-           // else
-           // {
-            //    usuarioService.Atualizar(u);
-           // }
+            else
+            {
+                usuarioService.Atualizar(u);
+            }
 
             return RedirectToAction("Listagem");
         }
@@ -45,5 +45,14 @@ namespace Biblioteca.Controllers
             UsuarioService usuarioService = new UsuarioService();
             return View(usuarioService.ListarTodos(objFiltro));
         }
+
+         public IActionResult Edicao(int id)
+        {
+           
+            UsuarioService us = new UsuarioService();
+            Usuario u = us.ObterPorId(id);
+            return View(u);
+        }
     }
+
 }

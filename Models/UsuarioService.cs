@@ -17,12 +17,25 @@ namespace Biblioteca.Models
             }
         }
 
+        public void Atualizar(Usuario u)
+        {
+            using(BibliotecaContext bc = new BibliotecaContext())
+            {
+               Usuario usuario = bc.Usuarios.Find(u.Id);
+               usuario.Login = u.Login;
+               usuario.Senha = u.Senha;
+                
+
+                bc.SaveChanges();
+            }
+        }
+
 
          public ICollection<Usuario> ListarTodos(FiltrosUsuarios filtro = null)
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
-                IQueryable<Livro> query;
+                IQueryable<Usuario> query;
                 
                 if(filtro != null)
                 {
@@ -38,7 +51,7 @@ namespace Biblioteca.Models
                         break;
 
                         default:
-                            query = bc.Usuario;
+                            query = bc.Usuarios;
                         break;
                     }
                 }
@@ -50,6 +63,14 @@ namespace Biblioteca.Models
                 
                 //ordenação padrão
                 return query.OrderBy(u => u.Login).ToList();
+            }
+        }
+
+         public Usuario ObterPorId(int id)
+        {
+            using(BibliotecaContext bc = new BibliotecaContext())
+            {
+                return bc.Usuarios.Find(id);
             }
         }
 
