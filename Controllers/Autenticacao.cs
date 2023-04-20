@@ -25,30 +25,25 @@ namespace Biblioteca.Controllers
 
         }
 
-    public static bool verificaLoginSenha(string login, string senha, Controller controller)
 
+    
+
+        public static bool verificaLoginSenha(string login, string senha, Controller controller)
         {
 
             using(BibliotecaContext bc = new BibliotecaContext())
-
             {
 
                 verificaSeUsuarioAdminExiste(bc);
 
-
-
                 senha = Criptografia.GerarMD5(senha);
 
-
-
                 IQueryable<Usuario> UsuarioEncontrado = bc.Usuarios.Where(u => u.login==login && u.senha==senha);
-
                 List<Usuario>ListaUsuarioEncontrado = UsuarioEncontrado.ToList();
-
-
+                
 
                 if(ListaUsuarioEncontrado.Count==0)
-
+                
                 {
 
                     return false;
@@ -118,8 +113,11 @@ namespace Biblioteca.Controllers
                 controller.Request.HttpContext.Response.Redirect("/Usuarios/NeedAdmin");
 
             }
+
         }
 
     }
 
 }
+
+    
