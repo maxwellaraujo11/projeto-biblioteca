@@ -28,7 +28,7 @@ namespace Biblioteca.Controllers
 
     
 
-        public static bool verificaLoginSenha(string login, string senha, Controller controller)
+        public static bool verificaLoginSenha(string Login, string Senha, Controller controller)
         {
 
             using(BibliotecaContext bc = new BibliotecaContext())
@@ -36,9 +36,9 @@ namespace Biblioteca.Controllers
 
                 verificaSeUsuarioAdminExiste(bc);
 
-                senha = Criptografia.GerarMD5(senha);
+                Senha = Criptografia.GerarMD5(Senha);
 
-                IQueryable<Usuario> UsuarioEncontrado = bc.Usuarios.Where(u => u.login==login && u.senha==senha);
+                IQueryable<Usuario> UsuarioEncontrado = bc.Usuarios.Where(u => u.Login==Login && u.Senha==Senha);
                 List<Usuario>ListaUsuarioEncontrado = UsuarioEncontrado.ToList();
                 
 
@@ -54,11 +54,11 @@ namespace Biblioteca.Controllers
 
                 {
 
-                    controller.HttpContext.Session.SetString("login",ListaUsuarioEncontrado[0].login);
+                    controller.HttpContext.Session.SetString("Login",ListaUsuarioEncontrado[0].Login);
 
                     controller.HttpContext.Session.SetString("Nome",ListaUsuarioEncontrado[0].Nome);
 
-                    controller.HttpContext.Session.SetInt32("tipo",ListaUsuarioEncontrado[0].tipo);
+                    controller.HttpContext.Session.SetInt32("tipo",ListaUsuarioEncontrado[0].Tipo);
 
                     return true;
 
@@ -72,7 +72,7 @@ namespace Biblioteca.Controllers
 
         {
 
-            IQueryable<Usuario> userEncontrado = bc.Usuarios.Where(u => u.login=="admin");
+            IQueryable<Usuario> userEncontrado = bc.Usuarios.Where(u => u.Login=="admin");
 
 
 
@@ -82,11 +82,11 @@ namespace Biblioteca.Controllers
 
                     Usuario admin = new Usuario();
 
-                    admin.login = "admin";
+                    admin.Login = "admin";
 
-                    admin.senha = Criptografia.GerarMD5("123");
+                    admin.Senha = Criptografia.GerarMD5("123");
 
-                    admin.tipo = Usuario.ADMIN;
+                    admin.Tipo = Usuario.ADMIN;
 
                     admin.Nome = "Administrador";
 

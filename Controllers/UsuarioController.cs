@@ -23,7 +23,7 @@ namespace Biblioteca.Controllers
             Autenticacao.CheckLogin(this);
             Autenticacao.verificaSeUsuarioEAdmin(this);
 
-            u.senha = Criptografia.GerarMD5(u.senha);
+            u.Senha = Criptografia.GerarMD5(u.Senha);
             
             UsuarioService usuarioService = new UsuarioService();
 

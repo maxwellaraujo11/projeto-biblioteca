@@ -40,7 +40,7 @@
                     <td>@u.Id</td>
                     <td>@u.Login</td>
                     <td>@u.Senha</td>
-                    @if(u.tipo==Usuario.ADMIN)
+                    @if(u.Tipo==Usuario.ADMIN)
                     {
                        <td>Administrador</td> 
                     }
@@ -55,7 +55,7 @@
                 }
             </tbody>
             } 
-            
+
             else 
             {
                 <p> Nenhum registro encontrado</p>

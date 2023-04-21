@@ -22,9 +22,9 @@ namespace Biblioteca.Models
             using(BibliotecaContext bc = new BibliotecaContext())
             {
                Usuario usuario = bc.Usuarios.Find(u.Id);
-               usuario.login = u.login;
+               usuario.Login = u.Login;
                usuario.Nome = u.Nome;
-               usuario.senha = u.senha;
+               usuario.Senha = u.Senha;
                usuario.Tipo = u.Tipo;
                 
 
@@ -45,11 +45,11 @@ namespace Biblioteca.Models
                     switch(filtro.TipoFiltro)
                     {
                         case "Login":
-                            query = bc.Usuarios.Where(u => u.login.Contains(filtro.Filtro));
+                            query = bc.Usuarios.Where(u => u.Login.Contains(filtro.Filtro));
                         break;
 
                         case "Senha":
-                            query = bc.Usuarios.Where(u => u.senha.Contains(filtro.Filtro));
+                            query = bc.Usuarios.Where(u => u.Senha.Contains(filtro.Filtro));
                         break;
 
                         default:
