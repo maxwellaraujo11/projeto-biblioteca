@@ -2,41 +2,17 @@
     ViewData["Title"] = "Login";
 }
 
-<style>
-    body{
-        background-color: #808080;
-        
-    }
 
-    .tela{
-        margin-top: 20%;
-        height: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-
-    }
-    .t {
-        
-        border-radius: 10px;
-        background-color: #808080;
-        color: black;
-        margin: center;
-        
-    }
-</style>
-<body>
 <!--<div class="container">-->
     <div class="row justify-content-md-center">
-        <div class="jumbotron col-6 tela" style="background-color: #F5F5F5;">
+        <div class="jumbotron col-6 tela">
             <h1 class="text-center">Bem vindo ao sistema Biblioteca</h1>
             <form asp-action="Login" method="POST">
                 <div class="form-group">
-                    <input class="t" type="text" placeholder="Login" class="form-control" name="login" />
+                    <input  type="text" placeholder="Login" class="form-control" name="login" />
                 </div>
                 <div class="form-group">
-                    <input class="t" type="password" placeholder="Senha" class="form-control" name="senha"/>
+                    <input  type="password" placeholder="Senha" class="form-control" name="senha"/>
                 </div>
                 <input type="submit" class="btn btn-primary btn-lg" value="Entrar" />
             </form>
@@ -44,4 +20,3 @@
         </div>
     </div>
 <!--</div> -->
-</body>

@@ -15,7 +15,7 @@ namespace Biblioteca.Controllers
 
         {   
 
-            if(string.IsNullOrEmpty(controller.HttpContext.Session.GetString("login")))
+            if(string.IsNullOrEmpty(controller.HttpContext.Session.GetString("Login")))
 
             {
 
@@ -106,7 +106,7 @@ namespace Biblioteca.Controllers
 
         {
 
-            if(!(controller.HttpContext.Session.GetInt32("tipo")==Usuario.ADMIN))
+            if(!(controller.HttpContext.Session.GetInt32("Tipo")==Usuario.ADMIN))
 
             {
 
