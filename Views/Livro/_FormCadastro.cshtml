@@ -1,19 +1,28 @@
 @model Livro
-<div class="row justify-content-md-center">
+
+
+<style>
+     body{
+    background: linear-gradient(90deg, rgba(36, 35, 0, 0.837) 0%, rgba(191,142,33,1) 35%,  rgb(106, 76, 11) 100%);
+   }
+</style>
+<body>
+<div class="row justify-content-md-center bg-dark border border-light roundedr">
     <form asp-action="Cadastro" method="POST" class="col-md-4">
         <input type="hidden" asp-for="Id" required/>
         <div class="form-group">
-            <label asp-for="Titulo">Titulo</label>
-            <input asp-for="Titulo" class="form-control" required/>
+            <label asp-for="Titulo" class="text-light">Titulo</label>
+            <input asp-for="Titulo" class="form-control" placeholder="Ex: Harry Poter" required/>
         </div>
         <div class="form-group">
-            <label asp-for="Autor">Autor</label>
-            <input asp-for="Autor" class="form-control" required/>
+            <label asp-for="Autor" class="text-light">Autor</label>
+            <input asp-for="Autor" class="form-control" placeholder="Ex: Carlos Drumont" required/>
         </div>
         <div>
-            <label asp-for="Ano">Ano</label>
-            <input asp-for="Ano" required/>
+            <label asp-for="Ano" class="text-light">Ano</label>
+            <input asp-for="Ano" placeholder="Ex: 2010" required/>
         </div>
-        <input type="submit" value="Salvar" class="btn btn-primary"/>
+        <input type="submit" value="Salvar" class="btn btn-outline-warning"/>
     </form>
 </div>
+</body>

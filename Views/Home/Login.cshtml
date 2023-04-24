@@ -2,11 +2,20 @@
     ViewData["Title"] = "Login";
 }
 
-
+<style>
+     body{
+    background: linear-gradient(90deg, rgba(36, 35, 0, 0.837) 0%, rgba(191,142,33,1) 35%, rgb(106, 76, 11) 100%);
+    
+   }
+   .t2{
+    margin-top: 5%;
+   }
+</style>
+<body>
 <!--<div class="container">-->
-    <div class="row justify-content-md-center">
-        <div class="jumbotron col-6 tela">
-            <h1 class="text-center">Bem vindo ao sistema Biblioteca</h1>
+    <div class="row justify-content-md-center mt-5 ">
+        <div class="jumbotron text-bg-info mb-3 col-6 bg-dark t2">
+            <h1 class="text-center text-light">Bem vindo ao sistema Biblioteca</h1>
             <form asp-action="Login" method="POST">
                 <div class="form-group">
                     <input  type="text" placeholder="Login" class="form-control" name="login" />
@@ -14,9 +23,11 @@
                 <div class="form-group">
                     <input  type="password" placeholder="Senha" class="form-control" name="senha"/>
                 </div>
-                <input type="submit" class="btn btn-primary btn-lg" value="Entrar" />
+                <input type="submit" class="btn btn-outline-warning" value="Entrar" />
             </form>
             <p class="text-danger">@ViewData["Erro"]</p>
         </div>
     </div>
 <!--</div> -->
+</body>
+

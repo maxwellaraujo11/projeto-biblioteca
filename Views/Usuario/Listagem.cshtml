@@ -2,6 +2,14 @@
 @{
     ViewData["Title"] = "Listagem de Usuários";
 }
+
+<style>
+     body{
+    background: linear-gradient(90deg, rgba(36, 35, 0, 0.837) 0%, rgba(191,142,33,1) 35%,  rgb(106, 76, 11) 100%);
+   }
+</style>
+
+<body>
 <div class="row">
     <div class="col-md-12">
     <form class="form-inline" method="POST">
@@ -14,7 +22,7 @@
         <div class="form-group mb-2 mx-sm-3">
             <input type="text" placeholder="Filtro" name="Filtro" class="form-control" />
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
+        <button type="submit" class="btn btn-outline-warning mb-2">Pesquisar</button>
     </form>
     </div>
 </div>
@@ -63,3 +71,4 @@
         </table>
     </div>
 </div>
+</body>
